@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MolAgent — Documentation</title>
+<meta name="description" content="MolAgent documentation: install pi-molagent, configure for your HPC cluster, explore 26 skills across OPLS-AA/LAMMPS and Gaussian DFT/TDDFT workflows." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg:'#fafaf7','bg-2':'#f3f2ec', panel:'#ffffff',
+          ink:'#0a0a0a','ink-2':'#1a1a1a',
+          muted:'#6b6b68','muted-2':'#a3a39f',
+          line:'#e5e3dc','line-strong':'#c9c6bc',
+          accent:'#ff4a1c','accent-2':'#1847ff','accent-3':'#00a656',
+        },
+        fontFamily: { sans:['Inter','sans-serif'], mono:['JetBrains Mono','monospace'] },
+        maxWidth: { '8xl':'1400px' },
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="assets/style.css">
+
+<!-- Marked.js for client-side markdown rendering -->
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.9/dist/purify.min.js"></script>
+</head>
+<body class="bg-bg text-ink">
+
+<!-- ============ TOP BAR ============ -->
+<header class="fixed top-0 inset-x-0 h-[60px] bg-bg/85 backdrop-blur-md border-b border-line z-50">
+  <div class="max-w-8xl mx-auto h-full px-5 md:px-8 flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center gap-3 font-bold tracking-tight">
+      <span class="w-7 h-7">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <circle cx="16" cy="16" r="5" fill="#ff4a1c"/>
+          <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#0a0a0a" stroke-width="1.5" fill="none" transform="rotate(30 16 16)"/>
+          <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#0a0a0a" stroke-width="1.5" fill="none" transform="rotate(-30 16 16)"/>
+          <circle cx="29" cy="9" r="1.5" fill="#0a0a0a"/>
+          <circle cx="3" cy="23" r="1.5" fill="#0a0a0a"/>
+        </svg>
+      </span>
+      <span>MolAgent</span>
+      <span class="font-mono text-[10px] text-muted hidden sm:inline">docs</span>
+    </a>
+
+    <nav class="hidden md:flex gap-7 font-mono text-[13px] font-medium text-muted">
+      <a href="index.html#problem"  class="nav-link hover:text-ink">problem</a>
+      <a href="index.html#platform" class="nav-link hover:text-ink">platform</a>
+      <a href="index.html#methods"  class="nav-link hover:text-ink">methods</a>
+      <a href="index.html#roadmap"  class="nav-link hover:text-ink">roadmap</a>
+      <a href="docs.html"           class="nav-link !text-ink">docs</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <button id="mobile-toc-toggle" class="md:hidden btn btn-ghost !py-2">☰ Menu</button>
+      <a href="https://github.com/avatsaev/pi-molagent" class="btn btn-ghost hidden sm:inline-flex">GitHub</a>
+      <a href="index.html#contact" class="btn btn-accent hidden sm:inline-flex">Early Access →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ DOC LAYOUT ============ -->
+<main class="pt-[60px]">
+  <div class="max-w-8xl mx-auto px-5 md:px-8 grid md:grid-cols-[240px_1fr] xl:grid-cols-[260px_1fr_220px] gap-10 py-12">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="md:sticky md:top-[80px] md:self-start md:max-h-[calc(100vh-100px)] md:overflow-y-auto hidden md:block">
+      <div class="sidebar-group">Overview</div>
+      <a href="#overview"   data-doc="overview"   class="sidebar-link active">Introduction</a>
+      <a href="#quickstart" data-doc="quickstart" class="sidebar-link">Quick start</a>
+
+      <div class="sidebar-group">Guides</div>
+      <a href="#install"   data-doc="install"   class="sidebar-link">Installation</a>
+      <a href="#config"    data-doc="config"    class="sidebar-link">Configuration</a>
+      <a href="#steering"  data-doc="steering"  class="sidebar-link">Steering content</a>
+      <a href="#migration" data-doc="migration" class="sidebar-link">Migration from Claude Code</a>
+
+      <div class="sidebar-group">Reference</div>
+      <a href="#skills-ref" data-doc="skills-ref" class="sidebar-link">Skills reference</a>
+      <a href="#quantum"    data-doc="quantum"    class="sidebar-link">Quantum (Gaussian) skillset</a>
+      <a href="#commands"   data-doc="commands"   class="sidebar-link">Slash commands</a>
+      <a href="#rules-ref"  data-doc="rules-ref"  class="sidebar-link">Rules reference</a>
+    </aside>
+
+    <!-- Content -->
+    <article id="doc" class="prose min-w-0">
+      <div class="font-mono text-[12px] text-muted">Loading…</div>
+    </article>
+
+    <!-- Page TOC -->
+    <aside class="hidden xl:block sticky top-[80px] self-start max-h-[calc(100vh-100px)] overflow-y-auto">
+      <div class="font-mono text-[11px] uppercase tracking-widest text-muted-2 mb-4">On this page</div>
+      <nav id="page-toc" class="text-[13px] space-y-1.5"></nav>
+    </aside>
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="px-5 md:px-8 py-10 border-t border-line bg-[#f3f2ec]">
+  <div class="max-w-8xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center gap-3 font-bold tracking-tight">
+      <span class="w-7 h-7">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <circle cx="16" cy="16" r="5" fill="#ff4a1c"/>
+          <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#0a0a0a" stroke-width="1.5" fill="none" transform="rotate(30 16 16)"/>
+          <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#0a0a0a" stroke-width="1.5" fill="none" transform="rotate(-30 16 16)"/>
+        </svg>
+      </span>
+      <span>MolAgent</span>
+    </a>
+    <nav class="flex flex-wrap gap-6 font-mono text-[12px] text-muted">
+      <a href="index.html" class="hover:text-ink">Home</a>
+      <a href="#install"   class="hover:text-ink">Install</a>
+      <a href="#config"    class="hover:text-ink">Config</a>
+      <a href="#quantum"   class="hover:text-ink">Quantum</a>
+      <a href="#steering"  class="hover:text-ink">Steering</a>
+      <a href="#migration" class="hover:text-ink">Migration</a>
+      <a href="https://github.com/avatsaev/pi-molagent" class="hover:text-ink">GitHub ↗</a>
+    </nav>
+    <div class="font-mono text-[11px] text-muted-2">© 2026 · Tournai, Belgium</div>
+  </div>
+</footer>
+
+<!-- ============ INLINE DOC CONTENT (markdown source) ============ -->
+<script id="doc-overview" type="text/markdown">
+# Introduction
+
+**pi-molagent** is a package for the [pi coding agent](https://github.com/earendil-works/pi-mono)
+that turns it into a domain-expert in **OPLS-AA force fields, LAMMPS molecular dynamics, and
+Gaussian DFT** — with the discipline of a careful computational chemist baked in.
+
+It bundles three things:
+
+1. **26 skills** across two independent skillsets — self-contained `SKILL.md` directories
+   the agent loads on demand:
+   - **OPLS-AA / LAMMPS** (12 skills): force-field parameterization, polymer building,
+     solvent packing, DFT charges, dihedral fitting, plotting standards.
+   - **Quantum / Gaussian** (14 skills): full DFT / TDDFT input-build + output-parse
+     lifecycle. See the [Quantum skillset reference](#quantum).
+
+   The two skillsets share no code or config — use one, both, or extend either independently.
+2. **Steering content** — `AGENTS.md` rules, knowledge documents, and past-incident
+   lessons. Loaded by pi's native discovery; reinforced by an extension hook.
+3. **A pi extension** — registers slash commands (`/molagent:init`, `/molagent:doctor`,
+   `/hpc`, `/lammps`, `/gaussian`, `/critic`, `/verify`, …), reads the `molagent.json`
+   config, and enforces **RULE #0** — the login-node compute guard.
+
+## Who this is for
+
+- Computational chemistry / materials groups using an HPC cluster.
+- Anyone running LAMMPS with OPLS-AA who wants the agent to follow lab conventions.
+- Researchers on UArizona Puma — there's a preserved working config shipped at
+  `examples/molagent.uarizona-puma.json`.
+
+## What you need
+
+- [pi coding agent](https://github.com/earendil-works/pi-mono) (`npm install -g @earendil-works/pi-coding-agent`)
+- LAMMPS, Gaussian g16, VMD, LigParGen + BOSS (any subset, depending on which skills you use)
+- SLURM (optional — local mode is supported)
+
+> **Heads up.** pi-molagent does **not** ship scientific binaries. It expects them to
+> exist on the cluster already and points to them through `molagent.json`. See the
+> install guide for paths.
+
+## The 30-second tour
+
+```bash
+# One-liner installer (installs pi + all molagent extensions)
+curl -fsSL https://molagent.ai/install.sh | bash
+
+# Activate steering rules and verify
+ln -s /abs/path/pi-molagent/steering/AGENTS.md ~/.pi/agent/AGENTS.md
+pi
+> /molagent:init
+> /molagent:doctor
+```
+
+Now ask the agent something like *"parameterize this monomer with OPLS-AA and build a
+20-mer chain"* — it will load `ligpargen-from-mol` and `polymer-builder` on its own.
+</script>
+
+<script id="doc-quickstart" type="text/markdown">
+# Quick start
+
+Three steps from zero to a working setup.
+
+## 1. One-liner installer (recommended)
+
+A single `curl` does everything: checks Node.js, installs `pi` if missing,
+then installs every molagent extension (skipping anything already present).
+
+```bash
+curl -fsSL https://molagent.ai/install.sh | bash
+```
+
+What it installs:
+
+- `@earendil-works/pi-coding-agent` (the `pi` CLI itself)
+- `npm:pi-web-access` — web-search / fetch / librarian skill
+- `npm:@juicesharp/rpiv-ask-user-question` — structured-question UI
+- `npm:pi-powerline-footer` — status footer
+- `git:github.com/avatsaev/pi-molagent` — this package
+
+Idempotent and re-runnable. No `sudo`. The script tries HTTPS first and
+falls back to SSH for the private `pi-molagent` repo — you need either an
+HTTPS git credential helper (`gh auth login`) or a GitHub SSH key on this
+machine.
+
+Environment-variable knobs:
+
+| Variable | Default | Meaning |
+|----------|---------|---------|
+| `MOLAGENT_AUTH` | `auto` | `auto` → HTTPS then SSH. Force one with `https` or `ssh`. |
+| `MOLAGENT_REF` | — | git ref / tag / commit to pin to. |
+| `MOLAGENT_LOCAL` | — | Set to `1` for `pi install -l` (project-local). |
+
+Review before running:
+
+```bash
+curl -fsSL https://molagent.ai/install.sh -o install.sh
+less install.sh
+bash install.sh
+```
+
+## 1b. Manual install (alternative)
+
+If you'd rather drive each step yourself:
+
+```bash
+# Install pi
+npm install -g @earendil-works/pi-coding-agent
+pi --version
+
+# Install molagent (HTTPS — no SSH key required)
+pi install git:github.com/avatsaev/pi-molagent
+
+# Or via SSH
+pi install git:git@github.com:avatsaev/pi-molagent
+
+# Project-local install (recommended for shared HPC projects)
+pi install -l git:github.com/avatsaev/pi-molagent
+
+# Pin to a tag or commit
+pi install git:github.com/avatsaev/pi-molagent@v0.1.0
+```
+
+## 3. Symlink the steering file
+
+Pi discovers `AGENTS.md` either from the global agent directory or from the cwd
+ancestor walk. It does **not** scan installed packages, so you must place the file
+yourself.
+
+```bash
+pi list                                       # locate the install path
+ln -s /abs/path/pi-molagent/steering/AGENTS.md ~/.pi/agent/AGENTS.md
+```
+
+## 4. Configure and verify
+
+Inside pi:
+
+```
+/molagent:init      # writes a starter molagent.json with auto-discovered paths
+/molagent:doctor    # environment + skill readiness report
+```
+
+Done. The agent is now equipped with the full molagent skill set.
+
+> **Next:** read the [installation guide](#install) for per-cluster setup,
+> the [config schema](#config) for every knob, or
+> [steering](#steering) for how AGENTS.md, knowledge files, and subagents fit together.
+</script>
+
+<script id="doc-install"   type="text/markdown" data-source="docs/INSTALL.md"></script>
+<script id="doc-config"    type="text/markdown" data-source="docs/CONFIG.md"></script>
+<script id="doc-steering"  type="text/markdown" data-source="docs/STEERING.md"></script>
+<script id="doc-migration" type="text/markdown" data-source="docs/MIGRATION.md"></script>
+<script id="doc-quantum"   type="text/markdown" data-source="docs/QUANTUM.md"></script>
+
+<script id="doc-skills-ref" type="text/markdown">
+# Skills reference
+
+pi-molagent ships **26 skills** in two independent skillsets. Each is a
+self-contained directory under `skills/` with a `SKILL.md` describing when the
+agent should load it.
+
+- **A. OPLS-AA / LAMMPS workflow** (12 skills) — below.
+- **B. Quantum (Gaussian) workflow** (14 skills) — see the dedicated
+  [Quantum skillset reference](#quantum) for the full catalogue, pipeline
+  diagram, and usage examples.
+
+---
+
+## A. OPLS-AA / LAMMPS workflow
+
+### Structure & topology
+
+#### structure-analyze
+Mol2 / PDB structure analysis. Detects rings, assigns atom types, reports
+connectivity issues. Run before parameterization to catch problems early.
+
+#### polymer-builder
+Build oligomers and polymer chains from a monomer `mol2`. Handles head/tail
+atoms, regiochemistry, and chain lengths.
+
+### Force-field parameterization
+
+#### ligpargen-from-mol
+OPLS-AA parameterization via LigParGen + BOSS. Wraps the apptainer container,
+binds host BOSS and LigParGen source trees, and emits LAMMPS / GROMACS-ready files.
+
+#### opls-pipeline ★
+End-to-end OPLS-AA pipeline: parameterize → build LAMMPS data → validate.
+The skill the agent reaches for when the user says "parameterize this".
+
+#### dihedral-fit-pipeline ★
+OPLS-AA dihedral fitting from a Gaussian DFT scan to LAMMPS coefficients.
+Handles outlier detection, sign conventions, and harmonic / nharmonic forms.
+
+#### dft-charges
+DFT charge derivation in Gaussian g16. Supports Hirshfeld (default) and RESP.
+Generates SLURM scripts with the correct `%nprocshared`, scratch dir, and
+walltime caps.
+
+### System building
+
+#### solvent-pack
+Pack solvent boxes with Packmol and equilibrate with LAMMPS. Configurable
+min-distance, dispersion-k, and bond-warn thresholds.
+
+#### merge-data
+Merge multiple LAMMPS data files into one consistent box. Handles overlapping
+atoms, atom-type collisions, and unit-cell remapping.
+
+#### extract-molecules
+Extract a subset of molecules from a bulk LAMMPS data file and renumber
+cleanly.
+
+#### wrap-unwrap
+Wrap / unwrap LAMMPS trajectories across periodic boundaries. Critical for
+MSD and end-to-end distance calculations on polymers.
+
+### Analysis
+
+#### plot-standards
+Publication-quality matplotlib figure standards. Audience-friendly polymer
+names, comparison parity checks, color conventions, font sizes, DPI.
+
+### Meta
+
+#### find-skills
+List and describe available molagent skills. The agent calls this when the
+user asks "what can you do?".
+
+---
+
+## B. Quantum (Gaussian) workflow
+
+Fourteen skills covering the full DFT / TDDFT lifecycle as input builders
+(step 2-x, write `.gjf`) and output analyzers (step 4-x, read `.log`). The
+skills do **not** execute Gaussian — the user submits `g16` on SLURM in
+between. See the [Quantum skillset reference](#quantum) for the full
+catalogue, pipeline diagram, usage examples, and the env-var override scheme
+for reference databases (functionals, basis sets, solvents, vibrational
+scaling).
+
+Quick navigation:
+
+| Step | Skill | Purpose |
+|------|-------|---------|
+| 1   | `gaussian-structure-check` | Pre-flight: SMILES / xyz / pdb → connectivity, fragments, charge / mult |
+| 2   | `gaussian-input-builder`   | Generic `.gjf` writer with DB validation |
+| 2-0 | `gaussian-sp`              | Single-point energy |
+| 2-1 | `gaussian-freq`            | Frequency / thermochemistry |
+| 2-2 | `gaussian-fix-imag`        | Repair imaginary modes |
+| 2-3 | `gaussian-tuned-omega`     | ω-tuning for range-separated DFT |
+| 2-4 | `gaussian-tddft`           | TDDFT / TDA excited states |
+| 2-5 | `gaussian-deltae`          | ΔE / binding / counterpoise |
+| 2-6 | `gaussian-scan`            | PES scans (6 modes) |
+| 4-0 | `gaussian-parse-output`    | Generic `.log` parser |
+| 4-1 | `gaussian-ir-raman`        | IR / Raman spectrum + scaling |
+| 4-2 | `gaussian-tddft-analysis`  | UV-vis + MO contributions |
+| 4-3 | `gaussian-deltae-analysis` | Final ΔE / binding assembly |
+| 4-4 | `gaussian-scan-analysis`   | Scan curves + minima / TS |
+
+---
+
+> **Loading.** Skills are loaded on demand by pi's skill matcher — you don't
+> usually invoke them by name. Ask in plain English and the matcher picks the
+> right one.
+</script>
+
+<script id="doc-commands" type="text/markdown">
+# Slash commands
+
+The pi-molagent extension registers a set of slash commands. Type them inside
+pi at the `>` prompt.
+
+## Lifecycle
+
+| Command | Description |
+|---------|-------------|
+| `/molagent:init` | Write a starter `molagent.json` with auto-discovered paths |
+| `/molagent:doctor` | Environment + skill readiness report. Run this first when something is wrong. |
+| `/molagent:config` | Show or open the effective config |
+| `/molagent:test <skill>` | Run a smoke test for one skill |
+
+## Knowledge (on-demand)
+
+These commands load a heavy reference document into the conversation. Use them
+when the task needs that context — not on every session (each file is 100–280 lines).
+
+| Command | Loads | When to use |
+|---------|-------|-------------|
+| `/hpc` | UArizona Puma / HPC reference | Before SLURM submits, picking partitions, `va` checks |
+| `/lammps` | LAMMPS OPLS-AA reference | Editing LAMMPS input files, debugging crashes |
+| `/gaussian` | Gaussian g16 reference | Setting up DFT jobs, picking functionals, ω tuning |
+| `/plot-discipline` | Plot conventions | Before generating publication figures |
+| `/molagent-rules` | Re-inject the full rule set | When you suspect the agent has drifted |
+
+## Subagents
+
+| Command | Role |
+|---------|------|
+| `/critic <plan-or-claim>` | Devil's-advocate review of a plan or deliverable |
+| `/verify <claim> <data-paths>` | Blind re-derivation of a numerical claim from raw data |
+| `/incident-log <slug>` | Load a past-incident lesson (e.g. `installs-and-login`) |
+
+> Pi does not spawn a separate process for subagents — these commands inject
+> the role's protocol from `agents/*.md` and instruct the current LLM session
+> to play that role.
+</script>
+
+<script id="doc-rules-ref" type="text/markdown">
+# Rules reference
+
+pi-molagent enforces three standing rules. Two via steering text loaded into
+every session, one via a hard extension hook.
+
+## RULE #0 — Login node is off-limits for compute
+
+**Forbidden on the login node** (no exception, backgrounding does NOT change this):
+
+- Any `python` / `python3` that imports numpy, scipy, pandas, torch, tensorflow,
+  RDKit, OpenBabel/pybel, DECIMER, MolScribe, OCR, or any ML / cheminformatics
+  library.
+- `conda activate <env>` followed by anything that spawns Python.
+- Tesseract / OpenCV / ImageMagick / ffmpeg on user data.
+- `&`-backgrounded or forked Python loops (`xargs -P`, `parallel`).
+
+**Allowed on login:** pure-stdlib Python, sub-minute, single-threaded; standard
+shell binaries (`ls cat head tail grep jq awk sed wc sort find git squeue sacct sbatch va`).
+
+**Enforcement.** A `tool_call` hook intercepts bash commands. Three policies:
+
+| Policy | Behavior |
+|--------|----------|
+| `warn` (default) | Confirm prompt before allowing |
+| `strict` | Hard block — command is rejected |
+| `off` | Guard disabled |
+
+Configure in `molagent.json`:
+
+```json
+{ "cluster": { "login_node_compute_policy": "strict" } }
+```
+
+## RULE #1 — Never install software without an explicit "yes"
+
+**Forbidden** without permission:
+
+- `conda install`, `conda create`, `mamba`, `pip install`
+- Source builds (make / cmake / autotools)
+- Downloading binaries
+- Modifying `~/.bashrc` or `LD_LIBRARY_PATH`
+
+The cluster has every major scientific package preinstalled. The agent must:
+
+1. Check `steering/knowledge/<tool>.md` first (loaded via `/hpc`, `/lammps`, `/gaussian`).
+2. `grep` the project for the user's working `module load` invocation.
+3. Try the simplest one-line module load. If it fails — report the error and **ask**.
+
+## RULE #2 — Don't refactor working scripts
+
+Validated user scripts are off-limits to "improvements". When automation is
+requested, the agent **adds a driver on top** — it does not rewrite internals.
+
+## House rules
+
+- Copy LAMMPS commands character-for-character — never simplify or paraphrase.
+- Read / execute granted by default; ask before **overwriting** existing files.
+- Relaunching simulations: read the ORIGINAL `.in`, never write from scratch.
+- Crashes: diagnose first (read `.out`, check T / density / timestep) before fixing.
+- Entering any simulation folder: read `AGENTS.md`, `STATUS.md`, `BENCHMARK/`,
+  `docs/`, `README.md` before proposing changes.
+
+## Analysis discipline
+
+1. No reference without verification.
+2. Status before numbers — tabulate completion FIRST, metrics SECOND.
+3. Investigate red flags before trusting a number.
+4. Every number carries its status (sample size, completion rate, caveats).
+5. Know the tool before tuning it.
+
+---
+
+The full source of these rules lives in
+[`steering/AGENTS.md`](https://github.com/avatsaev/pi-molagent/blob/main/steering/AGENTS.md).
+Re-inject them mid-session with `/molagent-rules`.
+</script>
+
+<script>
+// ---------- doc loader ----------
+const docEl   = document.getElementById('doc');
+const tocEl   = document.getElementById('page-toc');
+const sidebar = document.getElementById('sidebar');
+
+marked.setOptions({ gfm: true, breaks: false, headerIds: true, mangle: false });
+
+async function loadDoc(key) {
+  const node = document.getElementById('doc-' + key);
+  if (!node) return;
+
+  let md = node.textContent || '';
+  const src = node.dataset.source;
+  if (src && !node.dataset.loaded) {
+    try {
+      const res = await fetch(src);
+      if (res.ok) {
+        md = await res.text();
+        node.dataset.loaded = '1';
+        node.textContent = md;
+      } else {
+        md = `# Could not load ${src}\n\nFetch returned **${res.status}**.\n\nServe this site over HTTP (e.g. \`python3 -m http.server\`) rather than opening it via \`file://\`.`;
+      }
+    } catch (e) {
+      md = `# Could not load ${src}\n\n\`\`\`\n${e}\n\`\`\`\n\nServe this site over HTTP (e.g. \`python3 -m http.server\`) rather than \`file://\`.`;
+    }
+  }
+
+  docEl.innerHTML = DOMPurify.sanitize(marked.parse(md));
+  buildTOC();
+  highlightActive(key);
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function buildTOC() {
+  const headings = docEl.querySelectorAll('h2, h3');
+  tocEl.innerHTML = '';
+  headings.forEach((h) => {
+    if (!h.id) h.id = h.textContent.toLowerCase().replace(/[^\w]+/g, '-');
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    a.className = 'block text-muted hover:text-accent transition-colors ' +
+      (h.tagName === 'H3' ? 'pl-3 text-[12.5px]' : 'font-medium');
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById(h.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    tocEl.appendChild(a);
+  });
+}
+
+function highlightActive(key) {
+  document.querySelectorAll('.sidebar-link').forEach(a => {
+    a.classList.toggle('active', a.dataset.doc === key);
+  });
+}
+
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const key = link.dataset.doc;
+    history.replaceState(null, '', '#' + key);
+    loadDoc(key);
+    if (window.innerWidth < 768) sidebar.classList.add('hidden');
+  });
+});
+
+document.getElementById('mobile-toc-toggle').addEventListener('click', () => {
+  sidebar.classList.toggle('hidden');
+});
+
+// initial load — from hash or default
+const validKeys = Array.from(document.querySelectorAll('.sidebar-link')).map(a => a.dataset.doc);
+const initial = location.hash.replace('#', '') || 'overview';
+loadDoc(validKeys.includes(initial) ? initial : 'overview');
+
+// Cross-doc links inside rendered markdown
+docEl.addEventListener('click', (e) => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  const key = a.getAttribute('href').slice(1);
+  if (!validKeys.includes(key)) return;
+  e.preventDefault();
+  history.replaceState(null, '', '#' + key);
+  loadDoc(key);
+});
+
+window.addEventListener('hashchange', () => {
+  const key = location.hash.replace('#', '');
+  if (validKeys.includes(key)) loadDoc(key);
+});
+</script>
+
+</body>
+</html>
