@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MolAgent — Materials discovery at the speed of thought.</title>
-<meta name="description" content="Years of simulation expertise, in the hands of every scientist. MolAgent pairs AI reasoning with expert-validated workflows and runs on your own machines — quantum chemistry, molecular dynamics, coarse-grained modeling and ML interatomic potentials. Your data never leaves your infrastructure." />
+<title>MolAgent — AI-accelerated materials innovation</title>
+<meta name="description" content="MolAgent is an AI research agent for materials science. It brings the newest scientific methods into working use, conducts complete simulation studies, and returns results you can trust." />
 <link rel="canonical" href="https://molagent.ai/" />
 
 <!-- Open Graph / social preview -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="MolAgent" />
-<meta property="og:title" content="MolAgent — an expert AI agent for molecular simulation" />
-<meta property="og:description" content="Years of simulation expertise, in the hands of every scientist. AI reasoning plus expert-validated workflows, deployed on your own cluster. Your data never leaves your infrastructure." />
+<meta property="og:title" content="MolAgent · AI-accelerated materials innovation" />
+<meta property="og:description" content="An AI research agent that makes materials research smarter, not just faster." />
 <meta property="og:url" content="https://molagent.ai/" />
 <meta property="og:image" content="https://molagent.ai/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="MolAgent — an expert AI agent for molecular simulation" />
-<meta name="twitter:description" content="Years of simulation expertise, in the hands of every scientist. AI reasoning plus expert-validated workflows, running on your own machines." />
+<meta name="twitter:title" content="MolAgent · AI-accelerated materials innovation" />
+<meta name="twitter:description" content="An AI research agent that makes materials research smarter, not just faster." />
 <meta name="twitter:image" content="https://molagent.ai/assets/og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1124,49 +1124,6 @@ body::before {
 
 @media (max-width: 900px) { .markets-grid { grid-template-columns: 1fr; } }
 
-/* ============ COST CALLOUT (problem) ============ */
-.cost-callout {
-  margin-top: 40px;
-  padding: 36px 40px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--accent);
-  border-radius: 14px;
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.cost-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 10px;
-}
-
-.cost-num {
-  font-size: 46px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  color: var(--accent);
-}
-
-.cost-text {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--ink);
-}
-
-.cost-text span { color: var(--muted); }
-
-@media (max-width: 900px) {
-  .cost-callout { grid-template-columns: 1fr; gap: 20px; padding: 28px; }
-}
-
 /* ============ WHY NOW ============ */
 .whynow-grid {
   display: grid;
@@ -1344,135 +1301,6 @@ body::before {
   .flow-notes { grid-template-columns: 1fr; }
 }
 
-/* ============ PROOF ============ */
-.proof-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.proof-card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 36px;
-  display: flex;
-  flex-direction: column;
-}
-
-.proof-head {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  padding-bottom: 16px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-}
-
-.proof-title {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 22px;
-}
-
-.proof-metric {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  flex-wrap: wrap;
-  padding: 22px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 22px;
-}
-
-.proof-before {
-  font-size: 26px;
-  font-weight: 600;
-  color: var(--muted);
-  text-decoration: line-through;
-  text-decoration-color: var(--line-strong);
-  letter-spacing: -0.02em;
-}
-
-.proof-arrow { color: var(--muted-2); font-size: 20px; }
-
-.proof-after {
-  font-size: 38px;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-
-.proof-metric-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  width: 100%;
-  margin-top: 4px;
-}
-
-.proof-compare { display: grid; gap: 18px; margin-bottom: 22px; }
-
-.proof-col-tag {
-  font-family: var(--mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
-.proof-col.with .proof-col-tag { color: var(--accent); }
-
-.proof-col p { font-size: 14.5px; line-height: 1.6; color: var(--ink); }
-.proof-col:not(.with) p { color: var(--muted); }
-
-.proof-bullets {
-  list-style: none;
-  margin-bottom: 22px;
-}
-
-.proof-bullets li {
-  position: relative;
-  padding-left: 20px;
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.55;
-  margin-bottom: 8px;
-}
-
-.proof-bullets li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 9px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-3);
-}
-
-.proof-cite {
-  margin-top: auto;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-  font-family: var(--mono);
-  font-size: 11px;
-  line-height: 1.5;
-  color: var(--muted);
-}
-
-.proof-cite b { color: var(--ink); font-weight: 600; }
-
-@media (max-width: 900px) { .proof-grid { grid-template-columns: 1fr; } }
 
 /* ============ MARKET SIZE BAND ============ */
 .mkt-size {
@@ -1510,57 +1338,6 @@ body::before {
 @media (max-width: 900px) {
   .mkt-size { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
 }
-
-/* ============ BUSINESS MODEL ============ */
-.model-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 28px;
-}
-
-.model-card {
-  padding: 32px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-}
-
-.model-tag {
-  display: inline-block;
-  font-family: var(--mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  background: var(--accent-glow);
-  padding: 5px 10px;
-  border-radius: 4px;
-  margin-bottom: 20px;
-}
-
-.model-title {
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 10px;
-}
-
-.model-desc { color: var(--muted); font-size: 14.5px; line-height: 1.55; }
-
-.model-note {
-  padding: 24px 32px;
-  border: 1px solid var(--line-strong);
-  border-radius: 14px;
-  background: var(--bg-2);
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
-.model-note strong { color: var(--ink); font-weight: 600; }
-
-@media (max-width: 900px) { .model-grid { grid-template-columns: 1fr; } }
 
 /* ============ TEAM ============ */
 .team-grid {
@@ -1663,18 +1440,6 @@ body::before {
 
 .team-link:hover { color: var(--accent); }
 .team-link svg { width: 14px; height: 14px; flex-shrink: 0; }
-
-.team-note {
-  padding: 26px 36px;
-  border: 1px solid var(--line-strong);
-  border-radius: 14px;
-  background: var(--bg);
-  font-size: 17px;
-  line-height: 1.6;
-  text-align: center;
-}
-
-.team-note strong { color: var(--accent); font-weight: 600; }
 
 @media (max-width: 900px) {
   .team-grid { grid-template-columns: 1fr; }
@@ -1872,10 +1637,9 @@ body::before {
       <span>MolAgent</span>
     </a>
     <nav class="nav-links">
-      <a href="#problem">Problem</a>
-      <a href="#platform">Approach</a>
-      <a href="#proof">Proof</a>
-      <a href="#methods">Methods</a>
+      <a href="#problem">The Bottleneck</a>
+      <a href="#platform">How It Works</a>
+      <a href="#methods">Method Stack</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#team">Team</a>
       <a href="docs.html">Getting Started</a>
@@ -1895,16 +1659,16 @@ body::before {
   <div class="hero-inner">
     <div class="hero-tag">
       <span class="hero-tag-dot"></span>
-      <span>An expert AI agent · runs on your own machines · Tournai, BE</span>
+      <span>An AI research agent for materials · Tournai, BE</span>
     </div>
 
     <h1 class="hero-headline">
-      Materials discovery<br>
-      at the speed of <span class="accent">thought.</span>
+      MolAgent <br>
+      <span class="accent">AI-accelerated materials innovation.</span>
     </h1>
 
     <p class="hero-sub">
-      Years of expertise, in the hands of every scientist. <strong>MolAgent</strong> pairs the reasoning of an AI with <strong>workflows validated by experts</strong> — in quantum chemistry, molecular dynamics, coarse-grained modeling and ML interatomic potentials. It is deployed <strong>on your own infrastructure</strong>: it understands your objective, prepares and launches the calculations, watches them run, and interprets what comes out. Your data never leaves your machines.
+      <strong>MolAgent</strong> is an AI research agent for materials science. It brings the newest scientific methods into working use, conducts complete simulation studies, and returns results you can trust.
     </p>
 
     <div class="hero-ctas">
@@ -2131,48 +1895,37 @@ body::before {
 <section class="section" id="problem">
   <div class="section-inner">
     <div class="section-header">
-      <div class="section-num">01 / problem</div>
+      <div class="section-num">01 / the bottleneck</div>
       <div>
-        <h2 class="section-title">Powerful tools, locked behind <span class="accent">expertise.</span></h2>
-        <p class="section-intro">The brake isn't compute power. It's the expertise it takes to use it. Computational chemistry gives access to what experiment cannot see — transient structures, mechanisms, energies, dynamics at the atomic scale — but only to the few people who know how to drive it.</p>
+        <h2 class="section-title">Simulation is powerful and <span class="accent">expensive to run properly.</span></h2>
+        <p class="section-intro">The cost is not the computing. It is the expert knowledge required at three separate stages: setting the calculation up, executing it, and validating that the answer means anything. Each stage can silently invalidate everything after it, and only a handful of people in any laboratory can carry all three.</p>
       </div>
     </div>
 
     <div class="problem-rows">
       <div class="problem-row">
         <div class="problem-idx">01</div>
-        <div class="problem-head">Tools that take years to master</div>
-        <div class="problem-body">Every code has its own formats, its own conventions and its own silent traps. Years of practice to master a single one — and a real project needs several.</div>
-        <div class="problem-severity">Industry-wide</div>
+        <div class="problem-head">Setup is where studies quietly go wrong</div>
+        <div class="problem-body">Every code has its own input syntax, conventions and silent traps. A minor error in a configuration produces an incorrect result, a wasted allocation, or a failure discovered three weeks later. The cost is paid twice: in compute and in the time spent finding out.</div>
+        <div class="problem-severity">Costly</div>
       </div>
       <div class="problem-row">
         <div class="problem-idx">02</div>
-        <div class="problem-head">An expert decision at every step</div>
-        <div class="problem-body">Preparation, equilibration, control, analysis — each stage forces a judgement call that a non-specialist has no way to settle. Get one wrong and the result is quietly meaningless.</div>
-        <div class="problem-severity">Critical</div>
+        <div class="problem-head">Execution takes weeks before anything is usable</div>
+        <div class="problem-body">Preparation, equilibration, monitoring, restart, analysis. Weeks pass before the first result worth looking at, and the person doing it is usually the one you least want doing it.</div>
+        <div class="problem-severity">Slow</div>
       </div>
       <div class="problem-row">
         <div class="problem-idx">03</div>
-        <div class="problem-head">Expertise that is rare and expensive</div>
-        <div class="problem-body">Only a handful of people per laboratory can genuinely run these calculations end to end. Their time, not the hardware, is what every project queues behind.</div>
-        <div class="problem-severity">Structural</div>
+        <div class="problem-head">Validation is skipped because it is expensive</div>
+        <div class="problem-body">Convergence, reference comparison, uncertainty. Everyone knows it should be done. Under deadline it gets shortened, and results get used anyway.</div>
+        <div class="problem-severity">Risky</div>
       </div>
       <div class="problem-row">
         <div class="problem-idx">04</div>
-        <div class="problem-head">Expertise that never transfers</div>
-        <div class="problem-body">The know-how walks out with the PhD students. Every team relearns what another team already mastered, and the laboratory keeps paying for the same lesson.</div>
-        <div class="problem-severity">Systemic</div>
-      </div>
-    </div>
-
-    <div class="cost-callout">
-      <div>
-        <div class="cost-label">What the expertise costs</div>
-        <div class="cost-num">4 to 8 years</div>
-      </div>
-      <div class="cost-text">
-        of doctoral and post-doctoral training to produce one person able to run these calculations from end to end.
-        <span>And that know-how does not transfer — it leaves with the person.</span>
+        <div class="problem-head">A few people carry all of it</div>
+        <div class="problem-body">Two or three people per laboratory can run these workflows end to end. Everything queues behind them, and when they leave, the protocols leave too.</div>
+        <div class="problem-severity">Structural</div>
       </div>
     </div>
   </div>
@@ -2184,7 +1937,7 @@ body::before {
     <div class="section-header">
       <div class="section-num">02 / why now</div>
       <div>
-        <h2 class="section-title">AI opens a new era — but <span class="accent">not on its own.</span></h2>
+        <h2 class="section-title">AI opens a new era but <span class="accent">not on its own.</span></h2>
         <p class="section-intro">For the first time, a scientist can describe an objective instead of writing input files. That is genuinely new. It is also not sufficient, and pretending otherwise is how a plausible answer becomes a wasted quarter of compute.</p>
       </div>
     </div>
@@ -2235,26 +1988,26 @@ body::before {
     <div class="section-header">
       <div class="section-num">03 / the approach</div>
       <div>
-        <h2 class="section-title">The power of AI, with the <span class="accent">rigour of science.</span></h2>
-        <p class="section-intro">An agent that executes an expert's method, on your machines, without your data ever leaving your infrastructure.</p>
+        <h2 class="section-title">The reasoning of an AI, on <span class="accent">methods built by experts.</span></h2>
+        <p class="section-intro">MolAgent is not a chatbot that talks about chemistry. It runs the same simulation codes your group already runs, through methods a computational chemist designed, and it checks its own work along the way.</p>
       </div>
     </div>
 
     <div class="pillars">
       <div class="pillar">
-        <div class="pillar-tag">01 · Reasoning</div>
-        <div class="pillar-title">The reasoning of an AI</div>
-        <div class="pillar-desc">Understands the request, plans the steps, and explains the results in the language of the problem rather than the language of the tool.</div>
+        <div class="pillar-tag">01 · AI reasoning</div>
+        <div class="pillar-title">You describe, it plans</div>
+        <div class="pillar-desc">Understands the objective, decides on an approach, sequences the steps, explains what it is doing and why. You talk to it in ordinary language and it asks you when a decision is yours to make.</div>
       </div>
       <div class="pillar">
-        <div class="pillar-tag">02 · Method</div>
-        <div class="pillar-title">Workflows built by experts</div>
-        <div class="pillar-desc">Validated, structured and reproducible methods, anchored in the accepted practice of the field — not improvised per run.</div>
+        <div class="pillar-tag">02 · Expert methods</div>
+        <div class="pillar-title">Validated, structured, reproducible</div>
+        <div class="pillar-desc">The workflows are built and verified by computational chemists, grounded in the accepted practice of the field. The same request produces the same methodological choices, which is what makes a result defensible.</div>
       </div>
       <div class="pillar hl">
-        <div class="pillar-tag">03 · Deployment</div>
-        <div class="pillar-title">Deployed on your infrastructure</div>
-        <div class="pillar-desc">On your machines or your cluster, right next to the codes and queues you already run. Nothing is uploaded. Your data does not go anywhere.</div>
+        <div class="pillar-tag">03 · Complete execution</div>
+        <div class="pillar-title">Setup, execution and validation</div>
+        <div class="pillar-desc">All three stages, not just the middle one. It prepares, runs, monitors, evaluates its own results, and runs additional checks or calculations when it judges them necessary. You approve, adjust, or send it back. The agent installs alongside the simulation software you already run, so your structures and results stay inside your organisation.</div>
       </div>
     </div>
 
@@ -2262,33 +2015,33 @@ body::before {
       <div class="flow-step">
         <div class="flow-idx">01</div>
         <div class="flow-title">Understands</div>
-        <div class="flow-desc">Interprets your scientific objective and identifies a strategy suited to it.</div>
+        <div class="flow-desc">Interprets the objective and identifies a suitable strategy, stating what would count as a usable result.</div>
       </div>
       <div class="flow-step">
         <div class="flow-idx">02</div>
-        <div class="flow-title">Prepares and launches</div>
-        <div class="flow-desc">Configures the workflow, prepares the files, and launches the calculations on your infrastructure.</div>
+        <div class="flow-title">Prepares and runs</div>
+        <div class="flow-desc">Configures the workflow, generates the inputs, and launches the calculations on your systems.</div>
       </div>
       <div class="flow-step">
         <div class="flow-idx">03</div>
-        <div class="flow-title">Monitors and controls</div>
-        <div class="flow-desc">Watches execution, detects failures, and adapts the steps when it needs to.</div>
+        <div class="flow-title">Monitors and checks</div>
+        <div class="flow-desc">Watches execution, detects errors and instabilities, adapts the steps, and evaluates whether the result holds.</div>
       </div>
       <div class="flow-step">
         <div class="flow-idx">04</div>
-        <div class="flow-title">Analyses and guides</div>
-        <div class="flow-desc">Processes the results, puts them in context, concludes, and proposes what to do next.</div>
+        <div class="flow-title">Analyses and proposes</div>
+        <div class="flow-desc">Puts the results in context, concludes, states what remains uncertain, and proposes the next step.</div>
       </div>
     </div>
 
     <div class="flow-notes">
       <div class="flow-note">
         <b>For the expert</b>
-        Delegates the execution and keeps the decision. The judgement calls stay where they belong.
+        Weeks of repetitive technical work delegated, and the studies you designed but never had time to run.
       </div>
       <div class="flow-note">
-        <b>For the non-expert</b>
-        Gains access to a method they would not have known how to build in the first place.
+        <b>For the team without a specialist</b>
+        Simulation becomes usable, at a standard someone else can check.
       </div>
     </div>
 
@@ -2303,23 +2056,23 @@ body::before {
           <div class="arch-tag">YOU</div>
           <div class="arch-name">Researcher</div>
           <ul class="arch-items">
-            <li>Describe the problem</li>
-            <li>Review proposed strategies</li>
-            <li>Approve, edit, decide</li>
-            <li>Stay in control</li>
+            <li>State the objective</li>
+            <li>Review the proposed approach</li>
+            <li>Approve, adjust, decide</li>
+            <li>Own the conclusion</li>
           </ul>
         </div>
         <div class="arch-connector">↔</div>
         <div class="arch-col central">
-          <div class="arch-tag">INSTALLED ON YOUR MACHINE</div>
+          <div class="arch-tag">MOLAGENT</div>
           <div class="arch-name">MolAgent CLI</div>
           <ul class="arch-items">
-            <li>Pre-built skills + pipelines</li>
-            <li>Method proposal engine</li>
-            <li>Input / script generation</li>
-            <li>Job submission + monitoring</li>
-            <li>Trajectory + result analysis</li>
-            <li>Memory of your conventions</li>
+            <li>Expert-built method library</li>
+            <li>Study design and setup</li>
+            <li>Input and job generation</li>
+            <li>Execution, monitoring, adaptation</li>
+            <li>Validation and reporting</li>
+            <li>Memory of your systems and conventions</li>
           </ul>
         </div>
         <div class="arch-connector">↔</div>
@@ -2327,10 +2080,9 @@ body::before {
           <div class="arch-tag">YOUR ENVIRONMENT</div>
           <div class="arch-name">HPC · Workstation · Cloud</div>
           <ul class="arch-items">
-            <li>SLURM / PBS / LSF queues</li>
-            <li>CPU + GPU nodes</li>
-            <li>Installed simulation binaries</li>
-            <li>Storage + trajectories</li>
+            <li>Your existing computing resources</li>
+            <li>Your installed simulation software</li>
+            <li>Your storage and your results</li>
           </ul>
         </div>
       </div>
@@ -2341,134 +2093,51 @@ body::before {
       <div class="cap">
         <div class="cap-num">01</div>
         <div class="cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div>
-        <div class="cap-title">Strategy Proposals</div>
-        <div class="cap-desc">Decomposes your question into options. Suggests methods, level of theory, convergence approach. You decide.</div>
+        <div class="cap-title">Setup &amp; Job Generation</div>
+        <div class="cap-desc">Validated inputs for LAMMPS, VASP, GROMACS, CP2K, ORCA and others, calibrated to your system and your group's conventions. Submission, monitoring, restart and scaling on your queues.</div>
       </div>
       <div class="cap">
         <div class="cap-num">02</div>
         <div class="cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-        <div class="cap-title">Input Generation</div>
-        <div class="cap-desc">Validated input files for LAMMPS, VASP, GROMACS, CP2K, ORCA — calibrated to your system and conventions.</div>
+        <div class="cap-title">Study Design</div>
+        <div class="cap-desc">Breaks an objective into a plan: what to compute, at what level of theory, in what order, at what cost. Presents the alternatives and the trade-offs.</div>
       </div>
       <div class="cap">
         <div class="cap-num">03</div>
         <div class="cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-        <div class="cap-title">Job Submission</div>
-        <div class="cap-desc">Builds your SLURM/PBS scripts, submits, watches the queue, restarts on failure, scales when needed.</div>
+        <div class="cap-title">Validation</div>
+        <div class="cap-desc">Convergence testing, comparison against reference data, uncertainty, and a record of every decision taken. The agent evaluates its own results and runs further checks when it judges them necessary.</div>
       </div>
       <div class="cap">
         <div class="cap-num">04</div>
         <div class="cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><polyline points="7 14 12 9 16 13 21 8"/></svg></div>
-        <div class="cap-title">Analysis &amp; Interpretation</div>
-        <div class="cap-desc">RDFs, MSDs, free-energy landscapes, phonons, band structures. Generates figures and explains what they mean.</div>
+        <div class="cap-title">Potentials Specialised to Your Chemistry</div>
+        <div class="cap-desc">Machine-learned interatomic potentials fine-tuned on your own system, with active learning and uncertainty quantification. Three orders of magnitude faster than the reference calculation, at an accuracy you can defend.</div>
       </div>
       <div class="cap">
         <div class="cap-num">05</div>
         <div class="cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div>
-        <div class="cap-title">MLIP Pipelines</div>
-        <div class="cap-desc">Active learning, data curation, training pipelines for MACE, NequIP, Allegro, and custom potentials.</div>
+        <div class="cap-title">Screening &amp; Exploration</div>
+        <div class="cap-desc">Large sets of candidates with active selection of what to compute next. Structure prediction, polymorph ranking, miscibility, adsorption, barriers, transport.</div>
       </div>
       <div class="cap">
         <div class="cap-num">06</div>
         <div class="cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <div class="cap-title">Lab Memory</div>
-        <div class="cap-desc">Learns your group's protocols, prior results, and conventions. Reuses what worked before.</div>
+        <div class="cap-title">Analysis &amp; Interpretation</div>
+        <div class="cap-desc">Structural, dynamic and electronic properties, mapped onto quantities an experimentalist measures. Figures, and an explanation of what they mean.</div>
       </div>
       <div class="cap">
         <div class="cap-num">07</div>
         <div class="cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
-        <div class="cap-title">Per-User Sessions</div>
-        <div class="cap-desc">Each researcher has their own context. Shareable runs. Full audit trail of every reasoning step.</div>
+        <div class="cap-title">Laboratory Memory</div>
+        <div class="cap-desc">Protocols, past results, what failed and why. Last year's study becomes an asset for this year's.</div>
       </div>
       <div class="cap">
         <div class="cap-num">08</div>
         <div class="cap-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <div class="cap-title">On Your Infrastructure</div>
-        <div class="cap-desc">Runs on your machines or your cluster, next to your codes and queues. Nothing is uploaded — your data never leaves the perimeter.</div>
+        <div class="cap-title">Inside Your Organisation</div>
+        <div class="cap-desc">Installs where the work already happens. Nothing is uploaded.</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="section section-alt" id="proof">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-num">04 / proof</div>
-      <div>
-        <h2 class="section-title">The expertise of a specialist, <span class="accent">without the specialist.</span></h2>
-        <p class="section-intro">Two studies that were actually done the hard way first — by the people who now build MolAgent. The comparison is against their own published work, not against a hypothetical baseline.</p>
-      </div>
-    </div>
-
-    <div class="proof-grid">
-
-      <div class="proof-card">
-        <div class="proof-head">Case 01 · Organic photovoltaics</div>
-        <div class="proof-title">Morphology of conjugated polymers for organic solar cells</div>
-
-        <div class="proof-metric">
-          <span class="proof-before">~12 months</span>
-          <span class="proof-arrow">→</span>
-          <span class="proof-after">1 week</span>
-          <span class="proof-metric-label">Time to a usable morphology</span>
-        </div>
-
-        <div class="proof-compare">
-          <div class="proof-col">
-            <div class="proof-col-tag">The classical approach</div>
-            <p>Driving these tools demands specialised know-how that is genuinely hard to acquire. Without that expertise in the room, the project does not start at all.</p>
-          </div>
-          <div class="proof-col with">
-            <div class="proof-col-tag">With MolAgent</div>
-            <p>MolAgent knows the tools, their traps and their limits. The objective is described in one sentence; the agent parameterises, builds, equilibrates, launches and analyses. The scientist arbitrates — they no longer execute.</p>
-          </div>
-        </div>
-
-        <ul class="proof-bullets">
-          <li>Conjugated polymer chains constructed automatically</li>
-          <li>Morphologies obtained: stacking, self-assembly, phase separation</li>
-        </ul>
-
-        <div class="proof-cite">
-          Published as <b>Xu, Z., Saiev, S., Qian, P., et al.</b><br>
-          Nature Communications <b>16</b>, 8381 (2025).
-        </div>
-      </div>
-
-      <div class="proof-card">
-        <div class="proof-head">Case 02 · High-throughput screening</div>
-        <div class="proof-title">A hundred structures, screened by a single PhD student</div>
-
-        <div class="proof-metric">
-          <span class="proof-before">6 months</span>
-          <span class="proof-arrow">→</span>
-          <span class="proof-after">3 days</span>
-          <span class="proof-metric-label">100 structures screened for miscibility</span>
-        </div>
-
-        <div class="proof-compare">
-          <div class="proof-col">
-            <div class="proof-col-tag">The classical path</div>
-            <p>Sharp expertise at every stage — choice of method, preparation, analysis. Rare to find and slow to train, so the work queues behind whoever has it.</p>
-          </div>
-          <div class="proof-col with">
-            <div class="proof-col-tag">With MolAgent</div>
-            <p>One PhD student, without deep expertise in the methods, reached the same place in three days of guided work. The agent handled the method; the assistant put the results in context and proposed the next step.</p>
-          </div>
-        </div>
-
-        <ul class="proof-bullets">
-          <li>100 distinct structures modelled to determine miscibility</li>
-          <li>Same level of method, arrived at by a non-specialist</li>
-        </ul>
-
-        <div class="proof-cite">
-          Originally required <b>1 post-doctoral researcher + 2 PhD students</b><br>
-          over six months of calculation and analysis.
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -2477,10 +2146,10 @@ body::before {
 <section class="section" id="methods">
   <div class="section-inner">
     <div class="section-header">
-      <div class="section-num">05 / methods</div>
+      <div class="section-num">04 / methods</div>
       <div>
-        <h2 class="section-title">Literate in the full <span class="accent">simulation stack.</span></h2>
-        <p class="section-intro">From electronic structure to coarse-grained mesoscale. From static lattices to ensemble statistics. MolAgent speaks every language your team already uses — and proposes the right one for the question.</p>
+        <h2 class="section-title">Four scales, <span class="accent">one search space.</span></h2>
+        <p class="section-intro">Real studies move between levels of description: survey cheaply, look closer where the answer is uncertain, confirm at the highest accuracy the budget allows. Each level has its own codes, formats and silent traps, and a real project combines several.</p>
       </div>
     </div>
 
@@ -2506,9 +2175,9 @@ body::before {
           </svg>
         </div>
         <div class="method-body">
-          <div class="method-code">01 · Electronic structure</div>
-          <div class="method-name">Quantum Chemistry &amp; DFT</div>
-          <div class="method-desc">Ground and excited-state electronic structure, band structures, phonons. Automated k-point convergence, functional selection, and embedding schemes.</div>
+          <div class="method-code">01 · Electrons</div>
+          <div class="method-name">Quantum</div>
+          <div class="method-desc">Describes electrons explicitly to predict structure, energy and reactivity. Reactions, electronic properties, small molecules.</div>
           <div class="method-stack">
             <span class="stack-tag">VASP</span>
             <span class="stack-tag">Quantum ESPRESSO</span>
@@ -2548,9 +2217,9 @@ body::before {
           </svg>
         </div>
         <div class="method-body">
-          <div class="method-code">02 · Atomistic dynamics</div>
+          <div class="method-code">02 · Atoms</div>
           <div class="method-name">Molecular Dynamics</div>
-          <div class="method-desc">All-atom and classical MD from ps to µs. Enhanced sampling — metadynamics, umbrella, replica exchange. Transport coefficients and free-energy landscapes.</div>
+          <div class="method-desc">Follows the motion of atoms over time. Structure, diffusion, interactions, complex systems. Enhanced sampling and free-energy landscapes.</div>
           <div class="method-stack">
             <span class="stack-tag">LAMMPS</span>
             <span class="stack-tag">GROMACS</span>
@@ -2585,9 +2254,9 @@ body::before {
           </svg>
         </div>
         <div class="method-body">
-          <div class="method-code">03 · Mesoscale</div>
-          <div class="method-name">Coarse-Grained Modeling</div>
-          <div class="method-desc">Mesoscale dynamics for soft matter, polymers, membranes, biomolecular assemblies. MARTINI, DPD, systematic coarse-graining from atomistic data.</div>
+          <div class="method-code">03 · Groups of atoms</div>
+          <div class="method-name">Coarse-Grained</div>
+          <div class="method-desc">Groups atoms together to reach larger scales. Membranes, large assemblies, self-assembly, soft matter.</div>
           <div class="method-stack">
             <span class="stack-tag">MARTINI</span>
             <span class="stack-tag">DPD</span>
@@ -2636,14 +2305,14 @@ body::before {
           </svg>
         </div>
         <div class="method-body">
-          <div class="method-code">04 · Equivariant GNNs</div>
-          <div class="method-name">ML Interatomic Potentials</div>
-          <div class="method-desc">Training and deployment of equivariant graph neural network potentials. Active learning, uncertainty quantification, transferability across chemistries.</div>
+          <div class="method-code">04 · AI + physics</div>
+          <div class="method-name">Learned Potentials</div>
+          <div class="method-desc">Near-quantum accuracy at the speed of molecular dynamics, specialised to your chemistry with active learning and uncertainty quantification. Large-scale screening, long dynamics, complex systems.</div>
           <div class="method-stack">
             <span class="stack-tag">MACE</span>
             <span class="stack-tag">NequIP</span>
             <span class="stack-tag">Allegro</span>
-            <span class="stack-tag">SchNet</span>
+            <span class="stack-tag">UMA</span>
             <span class="stack-tag">GAP</span>
           </div>
         </div>
@@ -2675,9 +2344,9 @@ body::before {
           </svg>
         </div>
         <div class="method-body">
-          <div class="method-code">05 · High-throughput</div>
+          <div class="method-code">05 · Composition &amp; structure</div>
           <div class="method-name">Screening Pipelines</div>
-          <div class="method-desc">Automated workflows for screening chemical and materials spaces. Crystal structure prediction, adsorbate binding, solubility, reaction barriers.</div>
+          <div class="method-desc">Automated exploration of composition and structure with active selection of the next calculation.</div>
           <div class="method-stack">
             <span class="stack-tag">Materials Project</span>
             <span class="stack-tag">OQMD</span>
@@ -2724,8 +2393,8 @@ body::before {
         </div>
         <div class="method-body">
           <div class="method-code">06 · Observables</div>
-          <div class="method-name">Analysis &amp; Visualization</div>
-          <div class="method-desc">RDFs, MSDs, free-energy surfaces, phase diagrams. Publication-ready figures with consistent visual language and reproducible notebooks.</div>
+          <div class="method-name">Analysis &amp; Validation</div>
+          <div class="method-desc">Properties mapped to measurable quantities, convergence and uncertainty reported with every number, reproducible notebooks and publication-ready figures.</div>
           <div class="method-stack">
             <span class="stack-tag">MDAnalysis</span>
             <span class="stack-tag">ASE</span>
@@ -2744,10 +2413,10 @@ body::before {
 <section class="section section-alt" id="roadmap">
   <div class="section-inner">
     <div class="section-header">
-      <div class="section-num">06 / roadmap</div>
+      <div class="section-num">05 / roadmap</div>
       <div>
-        <h2 class="section-title">From first agents to a <span class="accent">discovery platform.</span></h2>
-        <p class="section-intro">A working prototype is already in the hands of two scientists, with five more ready to join the beta. Each phase de-risks the one after it.</p>
+        <h2 class="section-title">From working agents to a <span class="accent">delivered product.</span></h2>
+        <p class="section-intro">A working prototype is used by two scientists today, with five more ready for the beta.</p>
       </div>
     </div>
 
@@ -2770,8 +2439,8 @@ body::before {
         <div class="rm-card">
           <div class="rm-date">2025</div>
           <span class="rm-status done">Complete</span>
-          <div class="rm-title">Vision and plan</div>
-          <div class="rm-text">Company incorporated in Belgium. Technical architecture defined. First methods designed.</div>
+          <div class="rm-title">Foundation</div>
+          <div class="rm-text">Company incorporated. Architecture defined. First methods designed.</div>
         </div>
       </div>
 
@@ -2780,8 +2449,8 @@ body::before {
         <div class="rm-card">
           <div class="rm-date">H1 2026</div>
           <span class="rm-status done">Complete</span>
-          <div class="rm-title">First agents</div>
-          <div class="rm-text">Working agents that run real simulations end to end. Prototype in the hands of two scientists.</div>
+          <div class="rm-title">Working agents</div>
+          <div class="rm-text">Agents running real studies end to end. Prototype with two scientists.</div>
         </div>
       </div>
 
@@ -2791,7 +2460,7 @@ body::before {
           <div class="rm-date">H2 2026</div>
           <span class="rm-status active">In progress</span>
           <div class="rm-title">Alpha and pilots</div>
-          <div class="rm-text">Deployable version installed on partner infrastructure. Two to three pilot partners. Five scientists ready for the beta.</div>
+          <div class="rm-text">Deployable version installed with partners. Two to three pilots. Five scientists ready for the beta.</div>
         </div>
       </div>
 
@@ -2801,7 +2470,7 @@ body::before {
           <div class="rm-date">H1 2027</div>
           <span class="rm-status">Planned</span>
           <div class="rm-title">First product</div>
-          <div class="rm-text">A deliverable product. First results published with pilot partners.</div>
+          <div class="rm-text">Deliverable product. First results published with a pilot partner.</div>
         </div>
       </div>
 
@@ -2811,7 +2480,7 @@ body::before {
           <div class="rm-date">H2 2027</div>
           <span class="rm-status">Planned</span>
           <div class="rm-title">Launch</div>
-          <div class="rm-text">General availability on an annual licence. Seed round to scale the team.</div>
+          <div class="rm-text">General availability on annual licence. Seed round.</div>
         </div>
       </div>
 
@@ -2820,8 +2489,8 @@ body::before {
         <div class="rm-card">
           <div class="rm-date">2028 →</div>
           <span class="rm-status">Vision</span>
-          <div class="rm-title">Extensions</div>
-          <div class="rm-text">Pharmaceutical, biomedical and energy verticals. EU and US expansion.</div>
+          <div class="rm-title">Extension</div>
+          <div class="rm-text">Pharmaceutical, biomedical and energy. European and US expansion.</div>
         </div>
       </div>
     </div>
@@ -2832,10 +2501,10 @@ body::before {
 <section class="section" id="markets">
   <div class="section-inner">
     <div class="section-header">
-      <div class="section-num">07 / markets</div>
+      <div class="section-num">06 / markets</div>
       <div>
         <h2 class="section-title">Where MolAgent creates value <span class="accent">today.</span></h2>
-        <p class="section-intro">Three customer archetypes with the same underlying pain and three different procurement paths — inside a market that is growing at roughly 12% a year.</p>
+        <p class="section-intro">Three customer archetypes with the same underlying pain and three different procurement paths, inside a market growing at roughly 12% a year and backed by major public investment in AI-for-science.</p>
       </div>
     </div>
 
@@ -2849,7 +2518,7 @@ body::before {
         <div class="mkt-size-label">Annual growth<br>over the period</div>
       </div>
       <div class="mkt-size-src">
-        Up from $1.6B in 2025. The sectors directly concerned are medicines, batteries, catalysis, semiconductors, polymers and advanced materials.<br>
+        Up from roughly $1.7B in 2026. Public momentum is building on top of it: over $5B committed to the US Genesis Mission across ~300 projects, €107M for Europe's RAISE pilot with materials science as a flagship area, and €2.5B for AI under France 2030.<br>
         <span style="font-family: var(--mono); font-size: 11px;">Source: Fortune Business Insights</span>
       </div>
     </div>
@@ -2858,7 +2527,7 @@ body::before {
       <div class="market">
         <div class="market-letter">01</div>
         <div class="market-title">Universities &amp; research groups</div>
-        <div class="market-desc"><strong>The need:</strong> accelerate projects, standardise methods, and reduce dependence on a handful of experts. <strong>The value:</strong> automate the execution and capitalise the laboratory's know-how so it stops leaving with each cohort.</div>
+        <div class="market-desc"><strong>The need:</strong> accelerate projects, standardise methods, reduce dependence on two or three people. <strong>The value:</strong> the execution is automated and the group's practice is captured instead of walking out the door.</div>
         <div class="market-tags">
           <span class="market-tag">Computational chemistry</span>
           <span class="market-tag">Materials science</span>
@@ -2867,8 +2536,8 @@ body::before {
       </div>
       <div class="market">
         <div class="market-letter">02</div>
-        <div class="market-title">Compute centres &amp; national labs</div>
-        <div class="market-desc"><strong>The need:</strong> open complex infrastructure to a wider audience without multiplying human support. <strong>The value:</strong> make expert workflows accessible, and get more scientific return out of the compute already installed.</div>
+        <div class="market-title">Computing centres &amp; national laboratories</div>
+        <div class="market-desc"><strong>The need:</strong> open complex infrastructure to a wider set of users without multiplying human support. <strong>The value:</strong> more science per machine-hour, and a documented, auditable practice available to every user.</div>
         <div class="market-tags">
           <span class="market-tag">EuroHPC facilities</span>
           <span class="market-tag">Government labs</span>
@@ -2878,7 +2547,7 @@ body::before {
       <div class="market">
         <div class="market-letter">03</div>
         <div class="market-title">Industrial R&amp;D</div>
-        <div class="market-desc"><strong>The need:</strong> accelerate discovery in-house, with sensitive data and real reliability requirements. <strong>The value:</strong> run robust workflows on site, without anything leaving the perimeter.</div>
+        <div class="market-desc"><strong>The need:</strong> accelerate discovery in-house, with confidential data and reliability requirements. <strong>The value:</strong> complete studies run inside the perimeter, with the validation attached so a decision can be taken on the result.</div>
         <div class="market-tags">
           <span class="market-tag">Pharma &amp; biotech</span>
           <span class="market-tag">Energy</span>
@@ -2889,48 +2558,13 @@ body::before {
   </div>
 </section>
 
-<!-- BUSINESS MODEL -->
-<section class="section section-alt" id="model">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-num">08 / model</div>
-      <div>
-        <h2 class="section-title">An annual licence, on the customer's <span class="accent">own infrastructure.</span></h2>
-        <p class="section-intro">The product installs where the data and the compute already are. That is what makes it buyable by a laboratory or an industrial R&amp;D group — there is no hardware to procure and no data to move.</p>
-      </div>
-    </div>
-
-    <div class="model-grid">
-      <div class="model-card">
-        <div class="model-tag">Recurring</div>
-        <div class="model-title">Annual licence</div>
-        <div class="model-desc">Per laboratory or per compute node. Recurring revenue that tracks actual usage rather than seat count.</div>
-      </div>
-      <div class="model-card">
-        <div class="model-tag">At entry</div>
-        <div class="model-title">Deployment &amp; integration</div>
-        <div class="model-desc">Installation on your cluster, wired into the simulation codes and the job queues you already run.</div>
-      </div>
-      <div class="model-card">
-        <div class="model-tag">Extension</div>
-        <div class="model-title">Custom workflows</div>
-        <div class="model-desc">Development of methods specific to a scientific domain or to a particular customer's practice.</div>
-      </div>
-    </div>
-
-    <div class="model-note">
-      <strong>Pricing scales with laboratory size and node count.</strong> Ranges are being validated with pilot partners — <a href="#contact" style="color: var(--accent); font-weight: 600;">get in touch</a> and we will walk you through what a deployment looks like for a team your size.
-    </div>
-  </div>
-</section>
-
 <!-- TEAM -->
 <!-- #founder kept as an alias so older links and bookmarks still land here. -->
 <span id="founder"></span>
 <section class="section" id="team">
   <div class="section-inner">
     <div class="section-header">
-      <div class="section-num">09 / team</div>
+      <div class="section-num">07 / team</div>
       <div>
         <h2 class="section-title">Two complementary <span class="accent">profiles.</span></h2>
         <p class="section-intro">Not an outsider's guess at what scientists need. The science comes from someone who has spent a career doing it by hand; the engineering from someone who has shipped AI systems at scale.</p>
@@ -2982,10 +2616,6 @@ body::before {
       </div>
 
     </div>
-
-    <div class="team-note">
-      Shamil brings <strong>12 years of scientific expertise</strong> in the field, while Aslan turns that expertise into a product with <strong>10 years of software engineering</strong>.
-    </div>
   </div>
 </section>
 
@@ -3012,8 +2642,8 @@ body::before {
       <span class="cta-tag-dot"></span>
       <span>Early access · Pilots · Collaborations</span>
     </div>
-    <h2 class="cta-title">All the expertise of simulation, <span class="accent">without all its complexity.</span></h2>
-    <p class="cta-sub">We're opening early access to a small cohort of research groups, HPC centres and industry teams. Two scientists already use the prototype and five more are ready for the beta. If your scientists shouldn't be spending their days writing input files, let's talk.</p>
+    <h2 class="cta-title">The study you designed <span class="accent">and never had the months to run.</span></h2>
+    <p class="cta-sub">We are opening early access to a small group of research teams, computing centres and industrial R&amp;D groups. Two scientists use the prototype today and five more are ready for the beta.</p>
 
     <div class="cta-actions">
       <a href="mailto:ssaiev@molagent.ai" class="btn btn-accent">Contact the team →</a>
@@ -3051,7 +2681,7 @@ body::before {
       <span>MolAgent</span>
     </div>
     <div>© 2026 · Tournai, Belgium</div>
-    <div>AI for computational discovery</div>
+    <div>AI-accelerated materials innovation</div>
   </div>
 </footer>
 
